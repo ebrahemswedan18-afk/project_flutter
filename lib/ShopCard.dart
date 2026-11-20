@@ -17,18 +17,19 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: const Color.fromARGB(0, 180, 178, 178),
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Image.asset(
-            //   image,
-            //   height: 150,
-            //   width: double.infinity,
-            //   fit: BoxFit.cover,
-            // ),
+            Image.asset(
+              'image/pic .jpeg',
+              height: 220,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
             const SizedBox(height: 8),
             Text(
               name,
