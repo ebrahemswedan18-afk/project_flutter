@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF121212),
       body: SafeArea(
-        // SingleChildScrollView
+        //  SingleChildScrollView
         // يسمح بالتمرير عند الحاجة، مما يمنع مشاكل تجاوز المحتوى على الشاشة وخاصة عند ظهور لوحة المفاتيح
         child: SingleChildScrollView(
           // يضيف مسافة داخلية بمقدار 24 بكسل من جميع الاتجاهات حتى لا تلتصق الحقول بحواف الشاشة.

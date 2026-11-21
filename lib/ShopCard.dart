@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ShopDeta.dart';
+
 class ShopCard extends StatelessWidget {
   final String name;
   final String city;
@@ -16,38 +18,68 @@ class ShopCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    borderRadius:
+    BorderRadius.circular(150);
     return Card(
-      color: const Color.fromARGB(0, 180, 178, 178),
+      color: const Color.fromARGB(255, 78, 77, 75),
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+
           children: [
-            Image.asset(
-              'image/pic .jpeg',
-              height: 220,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(
+                32,
+              ), // تحكم بدرجة الاستدارة من هنا (مثلاً 12 أو 16 أو 25)
+              child: Image.asset(
+                'image/pic .jpeg',
+                height: 220,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
             const SizedBox(height: 8),
             Text(
               name,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFC9A545),
+              ),
             ),
-            Text(city, style: const TextStyle(color: Colors.grey)),
+            Text(city, style: const TextStyle(color: Color(0xFFC9A545))),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     const Icon(Icons.star, color: Colors.amber),
-                    Text('$rating تقييم'),
+                    Text(
+                      rating,
+                      style: const TextStyle(color: Color(0xFFC9A545)),
+                    ),
                   ],
                 ),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('عرض التفاصيل'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ShopDeta(
+                          name: name,
+                          city: city,
+                          rating: rating,
+                          image: image,
+                        ),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'عرض التفاصيل',
+                    style: TextStyle(color: Color(0xFFC9A545)),
+                  ),
                 ),
               ],
             ),
