@@ -46,6 +46,7 @@ class HomeScreen extends StatelessWidget {
               CategoryItem(icon: Icons.domain, name: ' سيئون '),
               CategoryItem(icon: Icons.auto_stories, name: 'تريم'),
               CategoryItem(icon: Icons.fort, name: 'الشحر'),
+              // CategoryItem(icon: Icons.fort, name: 'الشحر'),
             ],
           ),
           Padding(
@@ -62,6 +63,12 @@ class HomeScreen extends StatelessWidget {
             name: 'صالون ابو خليفة',
             city: 'تريم',
             rating: '36 تقييم',
+            image: 'assets/images/shop2.jpg',
+          ),
+          ShopCard(
+            name: 'صالون العندليب ',
+            city: 'الشحر ',
+            rating: '64 تقييم',
             image: 'assets/images/shop2.jpg',
           ),
           ShopCard(

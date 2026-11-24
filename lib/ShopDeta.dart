@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'FortyScreen.dart';
+
 class ShopDeta extends StatelessWidget {
   final String name;
   final String city;
@@ -104,10 +106,7 @@ class ShopDeta extends StatelessWidget {
                     leading: const Icon(Icons.access_time, color: Colors.amber),
                     title: Text("6:00 To 9:00"),
                   ),
-                  // ListTile(
-                  //   leading: const Icon(Icons.map, color: Colors.amber),
-                  //   title: Text('تريم/الفجير'),
-                  // ),
+
                   ListTile(
                     leading: const Icon(Icons.event_busy, color: Colors.amber),
                     title: Text(' وقت الدوام جميع ايام الاسبوع'),
@@ -119,7 +118,17 @@ class ShopDeta extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FortyScreen(
+                              shopName: name,
+                              image: 'image/pic .jpeg',
+                            ),
+                          ),
+                        );
+                      },
                       child: const Text(
                         'احجز الآن',
                         style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
